@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>My Apps – Download APKs</title>
+<title>Free Mock Tests – Download APKs</title>
 <meta name="description" content="Free Android apps. Download the APK and install in a minute.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📦</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -82,13 +82,13 @@ footer{margin-top:64px;padding:28px 0 40px;border-top:2px solid var(--line);colo
 <div class="wrap">
 
   <header class="top">
-    <a class="brand" href="#">My Apps</a>
+    <a class="brand" href="#">Mock Tests</a>
     <a class="gh" id="ghLink" href="#">View on GitHub</a>
   </header>
 
   <section class="hero">
-    <h1>Free Android apps. Download and install.</h1>
-    <p>Pick an app below, download the APK, and open it on your phone. No sign-up, no ads, no account needed.</p>
+    <h1>Free mock tests on your phone.</h1>
+    <p>Pick an app below, download the APK, and start practising. Free education, free mock tests, no sign-up.</p>
     <div class="cta">
       <a class="btn" href="#apps">Browse apps</a>
       <a class="btn ghost" href="#install">How to install</a>
@@ -128,14 +128,12 @@ footer{margin-top:64px;padding:28px 0 40px;border-top:2px solid var(--line);colo
 
 <script>
 /* ============ EDIT THIS SECTION ============ */
-const GITHUB_USER = "your-username";   // your GitHub username
-const REPO        = "your-repo";       // the repository that holds your releases
+const GITHUB_USER = "bitu027";
+const REPO        = "https-mocktest-odisha04.github.io";
 
 const APPS = [
-  // file = exact APK file name attached to your latest GitHub Release
-  { name: "First App",  icon: "🚀", desc: "One line about what this app does.", version: "1.0.0", size: "12 MB", android: "Android 8+", file: "first-app.apk" },
-  { name: "Second App", icon: "📚", desc: "One line about what this app does.", version: "0.9.2", size: "8 MB",  android: "Android 7+", file: "second-app.apk" },
-  { name: "Third App",  icon: "🎧", desc: "One line about what this app does.", version: "2.1.0", size: "20 MB", android: "Android 9+", file: "third-app.apk" }
+  { name: "IIT JAM Mock Test", icon: "🧪", desc: "Free mock tests to practise for IIT JAM.", version: "1.0", size: "4.83 MB", android: "", file: "IIT.Jam.apk" },
+  { name: "JT Mock Test",      icon: "📝", desc: "Free mock tests to practise for JT.",      version: "1.0", size: "3.99 MB", android: "", file: "JT.mock.test.apk" }
 ];
 /* ============================================ */
 
@@ -156,7 +154,7 @@ function render(items){
       <div>
         <h3>${esc(a.name)}</h3>
         <p>${esc(a.desc)}</p>
-        <div class="meta"><span>v${esc(a.version)}</span><span>${esc(a.size)}</span><span>${esc(a.android)}</span></div>
+        <div class="meta"><span>v${esc(a.version)}</span><span>${esc(a.size)}</span>${a.android?`<span>${esc(a.android)}</span>`:""}</div>
       </div>
       <a class="btn" href="${dl(a.file)}" download>Download APK</a>
     </article>`).join("");
