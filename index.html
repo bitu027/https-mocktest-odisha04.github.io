@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>My Apps – Download APKs</title>
+<meta name="description" content="Free Android apps. Download the APK and install in a minute.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📦</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#eef2ef; --surface:#ffffff; --ink:#15211d; --muted:#55645f; --line:#cfd9d4;
+  --accent:#0d6b58; --accent-ink:#ffffff; --tag:#dcebe5;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#101a17;--surface:#17251f;--ink:#e6efeb;--muted:#9bb0a8;--line:#2a3d36;--accent:#4fd1b0;--accent-ink:#06231b;--tag:#1f3830}
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.6 var(--body)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+
+header.top{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+.brand{font:800 1.15rem var(--display);text-decoration:none;letter-spacing:-.01em}
+.top a.gh{font-size:.95rem;color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line)}
+.top a.gh:hover{color:var(--ink)}
+
+.hero{padding:56px 0 40px}
+.hero h1{font:800 clamp(2.4rem,7vw,4.4rem)/1.02 var(--display);letter-spacing:-.03em;margin:0 0 18px;max-width:14ch}
+.hero p{font-size:1.1rem;color:var(--muted);max-width:52ch;margin:0 0 28px}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:10px;border:2px solid var(--accent);background:var(--accent);color:var(--accent-ink);font:500 1rem var(--body);text-decoration:none;cursor:pointer}
+.btn:hover{filter:brightness(1.08)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--ink)}
+
+.bar{display:flex;justify-content:space-between;align-items:end;gap:16px;margin:20px 0 12px;flex-wrap:wrap}
+.bar h2{font:800 1.6rem var(--display);margin:0;letter-spacing:-.02em}
+.bar input{font:inherit;padding:10px 14px;border:2px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);min-width:220px}
+
+.list{background:var(--surface);border:2px solid var(--line);border-radius:14px;overflow:hidden}
+.app{display:grid;grid-template-columns:56px 1fr auto;gap:16px;align-items:center;padding:18px 20px;border-top:2px solid var(--line)}
+.app:first-child{border-top:0}
+.icon{width:56px;height:56px;border-radius:14px;background:var(--tag);display:grid;place-items:center;font-size:1.7rem}
+.app h3{font:600 1.15rem var(--display);margin:0}
+.app p{margin:2px 0 6px;color:var(--muted);font-size:.95rem}
+.meta{display:flex;gap:8px;flex-wrap:wrap}
+.meta span{font-size:.8rem;background:var(--tag);padding:2px 10px;border-radius:99px}
+.empty{padding:28px 20px;color:var(--muted)}
+
+h2.sec{font:800 1.6rem var(--display);letter-spacing:-.02em;margin:56px 0 16px}
+ol.steps{margin:0;padding-left:1.3em;max-width:62ch}
+ol.steps li{margin-bottom:10px}
+details{border-top:2px solid var(--line);padding:14px 0}
+details:last-of-type{border-bottom:2px solid var(--line)}
+summary{cursor:pointer;font-weight:500}
+details p{color:var(--muted);margin:10px 0 0;max-width:62ch}
+
+footer{margin-top:64px;padding:28px 0 40px;border-top:2px solid var(--line);color:var(--muted);font-size:.9rem}
+
+@media (max-width:560px){
+  .app{grid-template-columns:48px 1fr;}
+  .app .btn{grid-column:1/-1;justify-content:center}
+  .icon{width:48px;height:48px}
+}
+@media (prefers-reduced-motion:no-preference){
+  .hero h1{animation:rise .6s ease both}
+  @keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <a class="brand" href="#">My Apps</a>
+    <a class="gh" id="ghLink" href="#">View on GitHub</a>
+  </header>
+
+  <section class="hero">
+    <h1>Free Android apps. Download and install.</h1>
+    <p>Pick an app below, download the APK, and open it on your phone. No sign-up, no ads, no account needed.</p>
+    <div class="cta">
+      <a class="btn" href="#apps">Browse apps</a>
+      <a class="btn ghost" href="#install">How to install</a>
+    </div>
+  </section>
+
+  <section id="apps">
+    <div class="bar">
+      <h2>Apps</h2>
+      <input id="q" type="search" placeholder="Search apps" aria-label="Search apps">
+    </div>
+    <div class="list" id="list"></div>
+  </section>
+
+  <section id="install">
+    <h2 class="sec">How to install an APK</h2>
+    <ol class="steps">
+      <li>Tap <b>Download APK</b> on the app you want.</li>
+      <li>Open the downloaded file from your notifications or the Downloads folder.</li>
+      <li>If Android asks, allow your browser or file manager to <b>install unknown apps</b>.</li>
+      <li>Tap <b>Install</b>, then <b>Open</b>.</li>
+    </ol>
+  </section>
+
+  <section id="faq">
+    <h2 class="sec">Questions</h2>
+    <details><summary>Is it safe?</summary><p>Every APK is built from the source code in this GitHub repository and uploaded to GitHub Releases. You can read the code and compare file sizes before installing.</p></details>
+    <details><summary>Why does Android show a warning?</summary><p>Android warns about any app that doesn’t come from the Play Store. It’s a general warning, not a sign that this file is bad.</p></details>
+    <details><summary>An app won’t install. What now?</summary><p>Check that your Android version meets the app’s minimum, and that you have enough free storage. If it still fails, open an issue on GitHub and include your phone model.</p></details>
+  </section>
+
+  <footer>
+    <span id="year"></span> My Apps. Hosted free on GitHub Pages.
+    <a id="issues" href="#">Report a problem</a>
+  </footer>
+</div>
+
+<script>
+/* ============ EDIT THIS SECTION ============ */
+const GITHUB_USER = "your-username";   // your GitHub username
+const REPO        = "your-repo";       // the repository that holds your releases
+
+const APPS = [
+  // file = exact APK file name attached to your latest GitHub Release
+  { name: "First App",  icon: "🚀", desc: "One line about what this app does.", version: "1.0.0", size: "12 MB", android: "Android 8+", file: "first-app.apk" },
+  { name: "Second App", icon: "📚", desc: "One line about what this app does.", version: "0.9.2", size: "8 MB",  android: "Android 7+", file: "second-app.apk" },
+  { name: "Third App",  icon: "🎧", desc: "One line about what this app does.", version: "2.1.0", size: "20 MB", android: "Android 9+", file: "third-app.apk" }
+];
+/* ============================================ */
+
+const repoUrl = `https://github.com/${GITHUB_USER}/${REPO}`;
+const dl = f => `${repoUrl}/releases/latest/download/${encodeURIComponent(f)}`;
+const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+document.getElementById("ghLink").href = repoUrl;
+document.getElementById("issues").href = repoUrl + "/issues";
+document.getElementById("year").textContent = "© " + new Date().getFullYear();
+
+const list = document.getElementById("list");
+function render(items){
+  if(!items.length){ list.innerHTML = '<div class="empty">No apps match your search.</div>'; return; }
+  list.innerHTML = items.map(a => `
+    <article class="app">
+      <div class="icon" aria-hidden="true">${esc(a.icon)}</div>
+      <div>
+        <h3>${esc(a.name)}</h3>
+        <p>${esc(a.desc)}</p>
+        <div class="meta"><span>v${esc(a.version)}</span><span>${esc(a.size)}</span><span>${esc(a.android)}</span></div>
+      </div>
+      <a class="btn" href="${dl(a.file)}" download>Download APK</a>
+    </article>`).join("");
+}
+render(APPS);
+document.getElementById("q").addEventListener("input", e => {
+  const t = e.target.value.trim().toLowerCase();
+  render(APPS.filter(a => (a.name + " " + a.desc).toLowerCase().includes(t)));
+});
+</script>
+</body>
+</html>
